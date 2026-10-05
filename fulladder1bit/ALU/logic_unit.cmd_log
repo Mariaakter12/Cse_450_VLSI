@@ -1,0 +1,3 @@
+vhdtdtfi -lib work /home/ise/ALU/logic_unit_4bit.v -lang verilog -prj ALU -o logic_unit.spl -module logic_unit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 logic_unit.spl /home/ise/ALU/logic_unit.sym 
+vhdtdtfi -lang verilog -prj ALU -o /home/ise/ALU/logic_unit.vhi -lib work /home/ise/ALU//logic_unit_4bit.v -module logic_unit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror 

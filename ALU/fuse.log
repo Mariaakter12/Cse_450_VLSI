@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/ALU/ALU_8bit_TB_isim_beh.exe -prj /home/ise/ALU/ALU_8bit_TB_beh.prj work.ALU_8bit_TB 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ise/ALU/ALU_1bit.vhd" into library work
+Parsing VHDL file "/home/ise/ALU/ALU_4bit.vhd" into library work
+Parsing VHDL file "/home/ise/ALU/ALU_8bit.vhd" into library work
+Parsing VHDL file "/home/ise/ALU/ALU_TestBench.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 95444 KB
+Fuse CPU Usage: 920 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture structural of entity ALU_1bit [alu_1bit_default]
+Compiling architecture structural of entity ALU_4bit [alu_4bit_default]
+Compiling architecture structural of entity ALU_8bit [alu_8bit_default]
+Compiling architecture behavioral of entity alu_8bit_tb
+Time Resolution for simulation is 1ps.
+Compiled 9 VHDL Units
+Built simulation executable /home/ise/ALU/ALU_8bit_TB_isim_beh.exe
+Fuse Memory Usage: 104056 KB
+Fuse CPU Usage: 950 ms
+GCC CPU Usage: 430 ms

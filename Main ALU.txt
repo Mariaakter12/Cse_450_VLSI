@@ -1,0 +1,75 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity ALUTOP is
+    Port (
+        A     : in  STD_LOGIC_VECTOR(7 downto 0);
+        B     : in  STD_LOGIC_VECTOR(7 downto 0);
+        SEL   : in  STD_LOGIC_VECTOR(2 downto 0);
+        Cin   : in  STD_LOGIC;
+        Y     : out STD_LOGIC_VECTOR(7 downto 0);
+        Cout  : out STD_LOGIC
+    );
+end ALUTOP;
+
+
+architecture Structural of ALUTOP is
+
+    component ALU_4bit
+        Port (
+            A     : in  STD_LOGIC_VECTOR(3 downto 0);
+            B     : in  STD_LOGIC_VECTOR(3 downto 0);
+            SEL   : in  STD_LOGIC_VECTOR(2 downto 0);
+            Cin   : in  STD_LOGIC;
+            Y     : out STD_LOGIC_VECTOR(3 downto 0);
+            Cout  : out STD_LOGIC
+        );
+    end component;
+
+
+    signal Y_LOW  : STD_LOGIC_VECTOR(3 downto 0);
+    signal Y_HIGH : STD_LOGIC_VECTOR(3 downto 0);
+
+    signal CARRY_LOW : STD_LOGIC;
+
+
+begin
+
+    ------------------------------------------------
+    -- LOWER 4-BIT ALU
+    ------------------------------------------------
+
+    ALU_LOW : ALU_4bit
+        port map (
+            A    => A(3 downto 0),
+            B    => B(3 downto 0),
+            SEL  => SEL,
+            Cin  => Cin,
+            Y    => Y_LOW,
+            Cout => CARRY_LOW
+        );
+
+
+    ------------------------------------------------
+    -- UPPER 4-BIT ALU
+    ------------------------------------------------
+
+    ALU_HIGH : ALU_4bit
+        port map (
+            A    => A(7 downto 4),
+            B    => B(7 downto 4),
+            SEL  => SEL,
+            Cin  => CARRY_LOW,
+            Y    => Y_HIGH,
+            Cout => Cout
+        );
+
+
+    ------------------------------------------------
+    -- 8-BIT OUTPUT
+    ------------------------------------------------
+
+    Y(3 downto 0) <= Y_LOW;
+    Y(7 downto 4) <= Y_HIGH;
+
+end Structural;

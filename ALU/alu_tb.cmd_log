@@ -1,0 +1,2 @@
+vhdtdtfi -lib work /home/ise/ALU/ALUtestbench.v -lang verilog -prj ALU -o alu_tb.spl -module alu_tb -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 alu_tb.spl /home/ise/ALU/alu_tb.sym 

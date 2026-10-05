@@ -1,0 +1,4 @@
+verilog work "full_adder.v"
+verilog work "adder_4bit.v"
+verilog work "register.v"
+verilog work "ALU.v"

@@ -1,0 +1,2 @@
+vhdtdtfi -lib work /home/ise/ALU/or_gate.v -lang verilog -prj ALU -o or_gate.spl -module or_gate -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 or_gate.spl /home/ise/ALU/or_gate.sym 

@@ -1,0 +1,4 @@
+vhdl work "ALU_1bit.vhd"
+vhdl work "ALU_4bit.vhd"
+vhdl work "ALU_8bit.vhd"
+vhdl work "ALU_TestBench.vhd"

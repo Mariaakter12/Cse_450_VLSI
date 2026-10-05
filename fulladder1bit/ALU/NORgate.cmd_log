@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/ise/ALU/NORgate.xst" -ofn "/home/ise/ALU/NORgate.syr" 

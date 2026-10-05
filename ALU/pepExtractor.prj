@@ -1,0 +1,3 @@
+work	"ALU_1bit.vhd"
+work	"ALU_4bit.vhd"
+work	"ALU_8bit.vhd"

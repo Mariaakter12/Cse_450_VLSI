@@ -1,0 +1,1 @@
+vhdtdtfi -lib work /home/ise/ALU/logic_unit_4bit.v -lang verilog -prj ALU -o logic_unit_4bit.spl -module logic_unit_4bit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 

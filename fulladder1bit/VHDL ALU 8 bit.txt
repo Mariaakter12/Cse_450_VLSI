@@ -1,0 +1,67 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity ALU_8bit is
+    Port (
+        A    : in  STD_LOGIC_VECTOR(7 downto 0);
+        B    : in  STD_LOGIC_VECTOR(7 downto 0);
+        SEL  : in  STD_LOGIC_VECTOR(2 downto 0);
+        Cin  : in  STD_LOGIC;
+        Y    : out STD_LOGIC_VECTOR(7 downto 0);
+        Cout : out STD_LOGIC
+    );
+end ALU_8bit;
+
+
+architecture Structural of ALU_8bit is
+
+    component ALU_4bit
+        Port (
+            A    : in  STD_LOGIC_VECTOR(3 downto 0);
+            B    : in  STD_LOGIC_VECTOR(3 downto 0);
+            SEL  : in  STD_LOGIC_VECTOR(2 downto 0);
+            Cin  : in  STD_LOGIC;
+            Y    : out STD_LOGIC_VECTOR(3 downto 0);
+            Cout : out STD_LOGIC
+        );
+    end component;
+
+    signal Y_LOW  : STD_LOGIC_VECTOR(3 downto 0);
+    signal Y_HIGH : STD_LOGIC_VECTOR(3 downto 0);
+
+    signal CARRY_LOW : STD_LOGIC;
+
+begin
+
+    -- Lower 4 bits: A(3:0), B(3:0)
+
+    LOW_ALU : ALU_4bit
+        port map (
+            A    => A(3 downto 0),
+            B    => B(3 downto 0),
+            SEL  => SEL,
+            Cin  => Cin,
+            Y    => Y_LOW,
+            Cout => CARRY_LOW
+        );
+
+
+    -- Upper 4 bits: A(7:4), B(7:4)
+
+    HIGH_ALU : ALU_4bit
+        port map (
+            A    => A(7 downto 4),
+            B    => B(7 downto 4),
+            SEL  => SEL,
+            Cin  => CARRY_LOW,
+            Y    => Y_HIGH,
+            Cout => Cout
+        );
+
+
+    -- Combine two 4-bit outputs into 8-bit output
+
+    Y(3 downto 0) <= Y_LOW;
+    Y(7 downto 4) <= Y_HIGH;
+
+end Structural;

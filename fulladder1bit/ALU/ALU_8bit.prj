@@ -1,0 +1,6 @@
+verilog work "full_adder.v"
+verilog work "logic_unit_4bit.v"
+verilog work "adder_4bit.v"
+verilog work "ALU.v"
+verilog work "ALUtestbench.v"
+vhdl work "ALU_8bit.vhd"

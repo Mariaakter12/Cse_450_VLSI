@@ -1,0 +1,74 @@
+module not_gate(
+    input A,
+    output Y
+);
+
+assign Y = ~A;
+
+endmodule
+
+XOR Gate:
+
+module xor_gate(
+    input A,
+    input B,
+    output Y
+);
+
+assign Y = A ^ B;
+
+endmodule
+
+NOR Gate
+
+module nor_gate(
+    input A,
+    input B,
+    output Y
+);
+
+assign Y = ~(A | B);
+
+endmodule
+
+
+AND Gate
+
+module and_gate(
+    input A,
+    input B,
+    output Y
+);
+
+assign Y = A & B;
+
+endmodule
+
+OR Gate
+
+module or_gate(
+    input A,
+    input B,
+    output Y
+);
+
+assign Y = A | B;
+
+endmodule
+
+
+1bit Full Adder
+
+module full_adder(
+    input A,
+    input B,
+    input Cin,
+    output Sum,
+    output Cout
+);
+
+assign Sum = A ^ B ^ Cin;
+
+assign Cout = (A & B) | (B & Cin) | (A & Cin);
+
+endmodule

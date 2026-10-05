@@ -1,0 +1,9 @@
+[Inputs]
+A
+B
+[Outputs]
+Y
+[BiDir]
+[ATTRIBUTES]
+VeriModel or_gate
+

@@ -1,0 +1,13 @@
+[Inputs]
+=A[3:0]=
+=B[3:0]=
+[Outputs]
+=AND_OUT[3:0]=
+=OR_OUT[3:0]=
+=XOR_OUT[3:0]=
+=NOR_OUT[3:0]=
+=NOT_OUT[3:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel logic_unit
+
